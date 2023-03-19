@@ -15,13 +15,11 @@ function colorChange() {
 function startColorSwitch() {
   intervalId = setInterval(colorChange, 1000);
   butSwitchStop.disabled = false;
-  butSwitchStart.disabled = true;
 }
 
 function stopColorSwitch(intervalId) {
   clearInterval(intervalId);
-  butSwitchStop.disabled = true;
-  butSwitchStart.disabled = false;
+
 }
 
 butSwitchStart.addEventListener('click', async () => {
