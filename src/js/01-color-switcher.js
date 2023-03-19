@@ -1,6 +1,6 @@
-const butSwitchStart = document.querySelector('button[data-start]');
-const butSwitchStop = document.querySelector('button[data-stop]');
-const bodyColor = document.querySelector('body');
+const butSwitchStart = document.querySelector("button[data-start]");
+const butSwitchStop = document.querySelector("button[data-stop]");
+const bodyColor = document.querySelector("body");
 
 let intervalId;
 
@@ -15,17 +15,19 @@ function colorChange() {
 function startColorSwitch() {
   intervalId = setInterval(colorChange, 1000);
   butSwitchStop.disabled = false;
+  butSwitchStart.disabled = true;
 }
 
-function stopColorSwitch(intervalId) {
+function stopColorSwitch() {
   clearInterval(intervalId);
-
+  butSwitchStop.disabled = true;
+  butSwitchStart.disabled = false;
 }
 
-butSwitchStart.addEventListener('click', async () => {
+butSwitchStart.addEventListener("click", async () => {
   startColorSwitch();
 });
 
-butSwitchStop.addEventListener('click', async () => {
+butSwitchStop.addEventListener("click", async () => {
   stopColorSwitch();
 });
